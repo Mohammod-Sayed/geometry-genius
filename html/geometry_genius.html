@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geomtry genius</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <div class="flex flex-col md:flex-row">
+            <!-- shape card container -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <!-- triangle card -->
+                <div class="card p-5 m-2 border-2 border-gray-700 shadow-xl">
+                    <figure>
+                        <img src="/geometry_genius/images/triangle.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Triangle</h2>
+                        <p class="text-center">Area(A) = 0.5 x b x h</p>
+                        <div>
+                            <input type="text" id="triangle_base" class="w-20 text-2xl rounded-sm p-2" value="" placeholder="b"> <span class="mr-2">cm</span>
+                            <input type="text" id="triangle_height" class="w-20 text-2xl rounded-sm p-2" name="" id="" placeholder="h"> <span class="mr-2">cm</span>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculateTriangleArea()" id="triangle_button" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- rectangle card-->
+                <div class="card p-5 m-2 border-2 border-gray-700 shadow-xl">
+                    <figure>
+                        <img src="/geometry_genius/images/rectangle.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Rectangle</h2>
+                        <p class="text-ceter">Area(A) = w x l</p>
+                        <div>
+                            <input type="text" name="" id="rectangle_width" class="w-20 text-2xl rounded-sm p-2" placeholder="W"> <span class="mr-2">cm</span>
+                            <input type="text" name="" id="rectangle_length" class="w-20 text-2xl rounded-sm p-2" placeholder="L"> <span class="mr-2">cm</span>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculateRectangleArea()" id="rectangle_button" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- rhombus card-->
+                <div class="card p-5 m-2  border-2 border-gray-700 shadow-xl">
+                    <figure>
+                        <img src="/geometry_genius/images/rhombus.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Rhombus</h2>
+                        <p>Area(A) = 0.5 x d<sub>1</sub> x d<sub>2</sub> </p>
+                        <div>
+                            <input type="text" name="" id="diagonal_1" class="w-20 text-2xl rounded-sm p-2" placeholder="d1"> <span class="mr-2">cm</span>
+                            <input type="text" name="" id="diagonal_2" class="w-20 text-2xl rounded-sm p-2" placeholder="d2"> <span class="mr-2">cm</span>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculateRhombusArea()" class="btn btn-primary w-full" id="rhombus_button">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- parallelogram card-->
+                <div class="card p-5 m-2 border-2 border-gray-700 shadow-xl">
+                    <figure>
+                        <img src="/geometry_genius/images/parallelogram.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Parallelogram</h2>
+                        <p>Area(A) = b x h</p>
+                        <div>
+                            <input type="text" name="" id="parallelogram_base" class="w-20 text-2xl rounded-sm p-2" placeholder="b"> <span class="mr-2">cm</span>
+                            <input type="text" name="" id="parallelogram_height" class="w-20 text-2xl rounded-sm p-2" placeholder="h"> <span class="mr-2">cm</span>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary w-full" id="parallelogram_button">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- pentagon card-->
+                <div class="card p-5 m-2 border-2 border-gray-700 shadow-xl">
+                    <figure>
+                        <img src="/geometry_genius/images/pentagon.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Pentagon</h2>
+                        <p>Area(A) = 0.5 x p x a</p>
+                        <div>
+                            <input type="text" name="" id="pentagon_perimeter" class="w-20 text-2xl rounded-sm p-2" placeholder="d1"> <span class="mr-2">cm</span>
+                            <input type="text" name="" id="pentagon_apothem" class="w-20 text-2xl rounded-sm p-2" placeholder="d2"> <span class="mr-2">cm</span>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculatePentagonArea()" class="btn btn-primary w-full" id="pentagon_button">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ellipse card-->
+                <div class="card p-5 m-2 border-2 border-gray-700 shadow-xl">
+                    <figure>
+                        <img src="/geometry_genius/images/ellipse.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Ellipse</h2>
+                        <p>Area (A) = π ab</p>
+                        <div>
+                            <input type="text" name="" id="ellipse_major-radius" class="w-20 text-2xl rounded-sm p-2" placeholder="d1"> <span class="mr-2">cm</span>
+                            <input type="text" name="" id="ellipse_minor-radius" class="w-20 text-2xl rounded-sm p-2" placeholder="d2"> <span class="mr-2">cm</span>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculateEllipseArea()" class="btn btn-primary w-full" id="ellipse_button">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- area calculation container -->
+            <div class="w-96 m-2 border-2 border-gray-700 rounded-md">
+                <h3 class="text-3xl text-center p-4 ">Area calculation</h3>
+                <span class="p-5" id="show_area"></span>
+            </div>
+        </div>
+    </main>
+
+    <script src="/geometry_genius/js/triangle_calculate.js"></script>
+    <script src="/geometry_genius/js/rectangle_calculate.js"></script>
+    <script src="/geometry_genius/js/rhombus.js"></script>
+    <script src="/geometry_genius/js/parallelogram.js"></script>
+    <script src="/geometry_genius/js/pentagon.js"></script>
+    <script src="/geometry_genius/js/ellipse.js"></script>
+    <script src="/geometry_genius/js/function.js"></script>
+</body>
+
+</html>
